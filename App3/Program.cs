@@ -6,6 +6,14 @@ namespace App3
 {
     class Program
     {
+        /*
+         3.	Создайте 2 интерфейса IPlayable и IRecodable. В каждом из 
+            интерфейсов создайте по 3 метода void Play() / void Pause() / void Stop() и 
+        void Record() / void Pause() / void Stop() соответственно. 
+        Создайте производный класс Player от базовых интерфейсов IPlayable и IRecodable. 
+        Написать программу, которая выполняет проигрывание и запись. 
+        Разрабатывать полноценные методы нет необходимости. Можно обойтись методами-заглушками. 
+         */
         static void Main(string[] args)
         {
             IPlayable player = new Player();
