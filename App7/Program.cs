@@ -8,8 +8,13 @@ namespace App7
        ●	метод добавления элемента,
        ●	индексатор для получения значения элемента по указанному индексу, 
        ●	свойство только для чтения для получения общего количества элементов.
+
+       Создайте расширяющий метод public static T[] GetArray<T>(this MyList<T> list). 
+       Выведите на экран значения элементов массива, который вернул расширяющий метод GetArray(). 
+       Реализуйте возможность перебора элементов коллекции в цикле foreach.
      */
 
+    
 
     class Program
     {
@@ -23,12 +28,14 @@ namespace App7
             myListString.Add("Четвертый элемент");
             myListString.Add("Пятый элемент");
 
+            var result = myListString.GetArray();
 
+            
             Console.WriteLine("Сейчас добавлены следующие элементы:");
-
-            for(int i = 0; i < myListString.CountElement; i++) 
+            Console.WriteLine("Для вывода элементов воспользуемся методом GetArray:");
+            foreach (var element in result)
             {
-                Console.WriteLine($"[{i}] - {myListString[i]}");
+                Console.WriteLine($"{element}");
             }
 
             Console.WriteLine($"Всего элементов: {myListString.CountElement}");
@@ -36,13 +43,15 @@ namespace App7
 
             
             Console.WriteLine("Удалим элемент 3. Результат:");
+            Console.WriteLine("Для вывода элементов воспользуемся реализацией " +
+                "перебора элементов коллекции в цикле foreach:");
             myListString.Delete(3);
 
-
-            for (int i = 0; i < myListString.CountElement; i++)
+            foreach (var element in myListString)
             {
-                Console.WriteLine($"[{i}] - {myListString[i]}");
+                Console.WriteLine($"{element}");
             }
+
             Console.WriteLine($"Всего элементов после удаления: {myListString.CountElement}");
 
 
