@@ -10,6 +10,12 @@ namespace App7
     {
 
         private List<T> listObject = new List<T>();
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return listObject.GetEnumerator();
+        }
+
         public T this[int index]
         {
             get
